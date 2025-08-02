@@ -18,10 +18,10 @@ Python script to parse player statistics from Minecraft's `stats` folder and gen
 Example usage:
 ```bash
 # Path to stats dir and usercache.json through home
-python main.py --stats ~/server/world/stats --usercache ~/server/usercache.json --pars stats,minecraft:broken,minecraft:shield
+python main.py --stats ~/server/world/stats --usercache ~/server/usercache.json --params stats,minecraft:broken,minecraft:shield
 
 # Path to stats dir and usercache.json in current directory
-python main.py --stats stats --usercache usercache.json --pars stats,minecraft:broken,minecraft:shield
+python main.py --stats stats --usercache usercache.json --params stats,minecraft:broken,minecraft:shield --exclude-zero
 ```
 
 Command arguments:
@@ -29,12 +29,13 @@ Command arguments:
 |-------------|-------------------------|---------------------------------|
 | --stats     | Path to stats/ directory| ~/server/world/stats            |
 | --usercache | Path to usercache.json  | ~/server/usercache.json         |
-| --pars      | Stats to collect        | stats,minecraft:broken,minecraft:shield |
+| --params      | Stats to collect        | stats,minecraft:broken,minecraft:shield |
+| --exclude-zero | Exclude players with `"result": 0` | |
 
 
-## How to determine what to use in --pars
+## How to determine what to use in --params
 
-To specify the correct statistic path for the `--pars` argument, follow these steps:
+To specify the correct statistic path for the `--params` argument, follow these steps:
 
 1. **Locate a player's stats file**  
     Go to the `stats/` folder inside your Minecraft world save (e.g. `world/stats/`). Open any `.json` file inside.
@@ -59,7 +60,7 @@ To specify the correct statistic path for the `--pars` argument, follow these st
     stats,minecraft:custom,minecraft:jump
 
 4. **Pass it to the script**
-    Use that full path as the --pars value:
+    Use that full path as the --params value:
     ```bash
-    python script.py --stats path/to/stats --usercache path/to/usercache.json --pars stats,minecraft:custom,minecraft:jump
+    python script.py --stats path/to/stats --usercache path/to/usercache.json --params stats,minecraft:custom,minecraft:jump
     ```

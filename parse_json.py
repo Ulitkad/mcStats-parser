@@ -1,4 +1,5 @@
 import json
+import os
 
 def get_nested_value(data, keys):
     current = data
@@ -11,11 +12,15 @@ def get_nested_value(data, keys):
 
 def get_data(input_dir, file_name, parameters):
 
-    with open(f"{input_dir}/{file_name}", "r", encoding="utf-8") as file:
-        data = json.load(file)
+    try:
+        with open(os.path.join(input_dir, file_name), "r", encoding="utf-8") as file:
+            data = json.load(file)
+    except (FileNotFoundError, json.JSONDecodeError) as e:
+        print(f"Error while reading {file_name}: {e}")
+        return 0
 
     result = get_nested_value(data, parameters)
 
-    return result, input_dir
+    return result
 
 
