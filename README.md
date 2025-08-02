@@ -25,16 +25,12 @@ python main.py --stats stats --usercache usercache.json --pars stats,minecraft:b
 ```
 
 Command arguments:
-```bash
---stats		    Path to stats/ directory
-			        example: ~/server/world/stats
-			
---usercache   Path to usercache.json
-			        example: ~/server/usercache.json
+| Parameter   | Description             | Example                          |
+|-------------|-------------------------|---------------------------------|
+| --stats     | Path to stats/ directory| ~/server/world/stats            |
+| --usercache | Path to usercache.json  | ~/server/usercache.json         |
+| --pars      | Stats to collect        | stats,minecraft:broken,minecraft:shield |
 
---pars 		    Stats to collect. 
-			        example: stats,minecraft:broken,minecraft:shield
-```
 
 ## How to determine what to use in --pars
 
