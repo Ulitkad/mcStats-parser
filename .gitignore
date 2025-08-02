@@ -1,0 +1,6 @@
+playerdata/
+stats/
+example_stats.json
+results/
+__pycache__/
+usercache.json
