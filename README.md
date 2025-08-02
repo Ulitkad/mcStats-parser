@@ -26,14 +26,14 @@ python main.py --stats stats --usercache usercache.json --pars stats,minecraft:b
 
 Command arguments:
 ```bash
---stats		Path to stats/ directory
-			example: ~/server/world/stats
+--stats		    Path to stats/ directory
+			        example: ~/server/world/stats
 			
---usercache Path to usercache.json
-			example: ~/server/usercache.json
+--usercache   Path to usercache.json
+			        example: ~/server/usercache.json
 
---pars 		Stats to collect. 
-			example: stats,minecraft:broken,minecraft:shield
+--pars 		    Stats to collect. 
+			        example: stats,minecraft:broken,minecraft:shield
 ```
 
 ## How to determine what to use in --pars
@@ -41,14 +41,14 @@ Command arguments:
 To specify the correct statistic path for the `--pars` argument, follow these steps:
 
 1. **Locate a player's stats file**  
-   Go to the `stats/` folder inside your Minecraft world save (e.g. `world/stats/`). Open any `.json` file inside — these files are named by player UUID.
+    Go to the `stats/` folder inside your Minecraft world save (e.g. `world/stats/`). Open any `.json` file inside.
 
 2. **Inspect the structure**  
-   Open the JSON file and look for the `"stats"` object. Inside, statistics are grouped by categories like `"minecraft:custom"`, `"minecraft:mined"`, `"minecraft:used"`, etc.
+    Open the JSON file and look for the `"stats"` object. Inside, statistics are grouped by categories like `"minecraft:custom"`, `"minecraft:broken"`, `"minecraft:used"`, etc.
 
 3. **Choose a statistic path**  
-   Navigate through the nested keys to find the statistic you're interested in.  
-   Example:
+    Navigate through the nested keys to find the statistic you're interested in.  
+    Example:
    ```json
    {
      "stats": {
@@ -58,12 +58,12 @@ To specify the correct statistic path for the `--pars` argument, follow these st
        }
      }
    }
-
-   If you want to track total jumps, the full path would be:
-   stats,minecraft:custom,minecraft:jump
+  ```
+    If you want to track total jumps, the full path would be:
+    stats,minecraft:custom,minecraft:jump
 
 4. **Pass it to the script**
-	Use that full path as the --pars value:
-	```bash
-	python script.py --stats path/to/stats --usercache path/to/usercache.json --pars stats,minecraft:custom,minecraft:jump
-	```
+    Use that full path as the --pars value:
+    ```bash
+    python script.py --stats path/to/stats --usercache path/to/usercache.json --pars stats,minecraft:custom,minecraft:jump
+    ```
