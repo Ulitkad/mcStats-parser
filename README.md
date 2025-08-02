@@ -49,16 +49,16 @@ To specify the correct statistic path for the `--pars` argument, follow these st
 3. **Choose a statistic path**  
     Navigate through the nested keys to find the statistic you're interested in.  
     Example:
-   ```json
-   {
-     "stats": {
-       "minecraft:custom": {
-         "minecraft:jump": 523,
-         "minecraft:walk_one_cm": 104293
-       }
-     }
-   }
-  ```
+    ```json
+    {
+      "stats": {
+        "minecraft:custom": {
+          "minecraft:jump": 523,
+          "minecraft:walk_one_cm": 104293
+        }
+      }
+    }
+    ```
     If you want to track total jumps, the full path would be:
     stats,minecraft:custom,minecraft:jump
 
